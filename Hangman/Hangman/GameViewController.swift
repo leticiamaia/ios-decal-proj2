@@ -12,20 +12,29 @@ class GameViewController: UIViewController {
 
     @IBOutlet weak var hangmanImageView: UIImageView!
     @IBOutlet weak var underscoresLabel: UILabel!
+    
     var gamePhrase: String?
     var guessedLetters = [Character]()
     var failedGuesses = 0
+    var disabledButtons = [UIButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initGame()
+    }
+    
+    func initGame() {
         let hangmanPhrases = HangmanPhrases()
         let phrase = hangmanPhrases.getRandomPhrase()
         self.gamePhrase = phrase
         self.failedGuesses = 0
         self.guessedLetters.removeAll()
-
+        for button in disabledButtons {
+            button.enabled = true
+        }
+        disabledButtons.removeAll()
         updateUnderscoresLabelText()
         print(phrase)
     }
@@ -33,23 +42,41 @@ class GameViewController: UIViewController {
     @IBAction func didGuess(sender: UIButton) {
         let letterGuess = sender.currentTitle
         sender.enabled = false
+        disabledButtons.append(sender)
         if self.gamePhrase!.characters.contains(Character(letterGuess!)) {
-            removeUnderscores(letterGuess!)
+            guessedLetters.append(Character(letterGuess!))
+            updateUnderscoresLabelText()
+            checkGameWinCondition()
         } else {
             failedGuesses += 1
             if(failedGuesses > 6) {
-                //end game
-                print(failedGuesses)
+                showEndGameAlert("Lost")
             } else {
                 changeHangmanImage()
             }
         }
     }
     
-    func removeUnderscores(letterGuess: String) {
-        guessedLetters.append(Character(letterGuess))
-        updateUnderscoresLabelText()
-
+    func checkGameWinCondition() {
+        for letter in gamePhrase!.characters {
+            if letter != " " && !guessedLetters.contains(letter) {
+                return
+            }
+        }
+        showEndGameAlert("Won")
+    }
+    
+    func showEndGameAlert(gameEndStatus: String) {
+        let alert = UIAlertController(title: "You " + gameEndStatus + "!", message:  "Click to play again or to go back to the menu.", preferredStyle: UIAlertControllerStyle.Alert)
+        let playAgainAction = UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default) {
+            (action: UIAlertAction) -> Void in self.initGame()
+        }
+        alert.addAction(playAgainAction)
+        let goToMenuAction = UIAlertAction(title: "Menu", style: UIAlertActionStyle.Default) {
+            (action: UIAlertAction) -> Void in self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alert.addAction(goToMenuAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func changeHangmanImage() {
