@@ -249,6 +249,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="hangmanImageView" destination="Hv6-dk-HBu" id="4OB-vJ-Sfc"/>
                         <outlet property="underscoresLabel" destination="jH0-0s-OW4" id="BWy-Ed-JOp"/>
                     </connections>
                 </viewController>

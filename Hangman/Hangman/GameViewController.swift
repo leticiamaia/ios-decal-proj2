@@ -10,9 +10,11 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var hangmanImageView: UIImageView!
     @IBOutlet weak var underscoresLabel: UILabel!
     var gamePhrase: String?
     var guessedLetters = [Character]()
+    var failedGuesses = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,8 @@ class GameViewController: UIViewController {
         let hangmanPhrases = HangmanPhrases()
         let phrase = hangmanPhrases.getRandomPhrase()
         self.gamePhrase = phrase
+        self.failedGuesses = 0
+        self.guessedLetters.removeAll()
 
         updateUnderscoresLabelText()
         print(phrase)
@@ -31,6 +35,14 @@ class GameViewController: UIViewController {
         sender.enabled = false
         if self.gamePhrase!.characters.contains(Character(letterGuess!)) {
             removeUnderscores(letterGuess!)
+        } else {
+            failedGuesses += 1
+            if(failedGuesses > 6) {
+                //end game
+                print(failedGuesses)
+            } else {
+                changeHangmanImage()
+            }
         }
     }
     
@@ -38,6 +50,11 @@ class GameViewController: UIViewController {
         guessedLetters.append(Character(letterGuess))
         updateUnderscoresLabelText()
 
+    }
+    
+    func changeHangmanImage() {
+        let newImageName = "hangman" + String(failedGuesses+1) + ".gif"
+        hangmanImageView.image = UIImage(named: newImageName)
     }
     
     func updateUnderscoresLabelText() {
