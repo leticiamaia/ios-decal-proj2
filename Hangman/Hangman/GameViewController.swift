@@ -26,8 +26,9 @@ class GameViewController: UIViewController {
     }
     
     func initGame() {
-        let hangmanPhrases = HangmanPhrases()
-        let phrase = hangmanPhrases.getRandomPhrase()
+        //let hangmanPhrases = HangmanPhrases()
+        //let phrase = hangmanPhrases.getRandomPhrase()
+        let phrase = "VEEEEEERY LOOOOOONG PHRAAAAAAAAAAAAASE"
         self.gamePhrase = phrase
         self.failedGuesses = 0
         self.guessedLetters.removeAll()

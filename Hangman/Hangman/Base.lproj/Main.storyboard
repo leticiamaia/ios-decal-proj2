@@ -215,43 +215,50 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Hv6-dk-HBu">
-                                <rect key="frame" x="250" y="130" width="100" height="100"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH0-0s-OW4">
-                                <rect key="frame" x="20" y="101" width="560" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH0-0s-OW4">
+                                <rect key="frame" x="20" y="101" width="560" height="61"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="560" id="PZK-0u-7E9"/>
+                                    <constraint firstAttribute="width" constant="560" id="CEh-cp-YUd"/>
                                 </constraints>
+                                <string key="text">dsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffvxcfllllllllllllldsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffvxcflllllllllllll</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CEh-cp-YUd"/>
+                                    </mask>
+                                </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Hv6-dk-HBu">
+                                <rect key="frame" x="250" y="194" width="100" height="100"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yQr-GL-Nry" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11l-5Q-8Yb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jH0-0s-OW4" secondAttribute="trailing" id="2Dy-mT-y7I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jH0-0s-OW4" secondAttribute="trailing" id="3x5-uj-wpS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jH0-0s-OW4" secondAttribute="leading" id="4US-X8-op0"/>
                             <constraint firstItem="Hv6-dk-HBu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="139" id="5wA-iW-oRy"/>
                             <constraint firstItem="jH0-0s-OW4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7K8-jf-Da1"/>
                             <constraint firstItem="Hv6-dk-HBu" firstAttribute="leading" secondItem="jH0-0s-OW4" secondAttribute="trailing" constant="-139" id="Cck-nL-Nw2"/>
-                            <constraint firstItem="jH0-0s-OW4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="MJG-pa-bUm"/>
                             <constraint firstItem="jH0-0s-OW4" firstAttribute="leading" secondItem="Hv6-dk-HBu" secondAttribute="leading" id="RgQ-LI-cov"/>
-                            <constraint firstItem="Hv6-dk-HBu" firstAttribute="top" secondItem="jH0-0s-OW4" secondAttribute="bottom" constant="8.5" id="SIC-GQ-e97"/>
-                            <constraint firstItem="Hv6-dk-HBu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dJf-oW-mEY"/>
+                            <constraint firstItem="jH0-0s-OW4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="TBc-uB-sP9"/>
+                            <constraint firstItem="Hv6-dk-HBu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tti-dS-rkz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yQr-GL-Nry" secondAttribute="bottom" constant="97" id="eCT-YF-v52"/>
                             <constraint firstItem="jH0-0s-OW4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gYW-W6-osg"/>
                             <constraint firstItem="Hv6-dk-HBu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hsI-ZO-J2e"/>
-                            <constraint firstItem="jH0-0s-OW4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vDo-Lw-pIH"/>
+                            <constraint firstItem="yQr-GL-Nry" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j50-P4-9o9"/>
+                            <constraint firstItem="jH0-0s-OW4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qjB-RE-I1g"/>
+                            <constraint firstItem="Hv6-dk-HBu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="174" id="zQX-ha-oq6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="5wA-iW-oRy"/>
-                                <exclude reference="Cck-nL-Nw2"/>
-                                <exclude reference="hsI-ZO-J2e"/>
                                 <exclude reference="7K8-jf-Da1"/>
                                 <exclude reference="RgQ-LI-cov"/>
                                 <exclude reference="gYW-W6-osg"/>
+                                <exclude reference="5wA-iW-oRy"/>
+                                <exclude reference="Cck-nL-Nw2"/>
+                                <exclude reference="hsI-ZO-J2e"/>
                             </mask>
                         </variation>
                     </view>
@@ -286,7 +293,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman" textAlignment="natural" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYp-6v-nV9">
                                 <rect key="frame" x="193.5" y="157" width="214" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
