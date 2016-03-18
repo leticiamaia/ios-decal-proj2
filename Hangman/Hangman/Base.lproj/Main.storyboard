@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yQr-GL-Nry">
-                                <rect key="frame" x="105" y="443" width="390" height="60"/>
+                                <rect key="frame" x="105" y="399" width="390" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yh5-cN-SRY">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
@@ -233,6 +233,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Hv6-dk-HBu">
                                 <rect key="frame" x="250" y="194" width="100" height="100"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAt-8V-daa">
+                                <rect key="frame" x="550" y="550" width="30" height="30"/>
+                                <state key="normal" title="Quit"/>
+                                <connections>
+                                    <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QtQ-8m-z4F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -241,15 +248,19 @@
                             <constraint firstItem="Hv6-dk-HBu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="139" id="5wA-iW-oRy"/>
                             <constraint firstItem="jH0-0s-OW4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7K8-jf-Da1"/>
                             <constraint firstItem="Hv6-dk-HBu" firstAttribute="leading" secondItem="jH0-0s-OW4" secondAttribute="trailing" constant="-139" id="Cck-nL-Nw2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aAt-8V-daa" secondAttribute="bottom" constant="20" id="Eq8-qj-xBM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aAt-8V-daa" secondAttribute="bottom" constant="44" id="H4l-zD-keU"/>
                             <constraint firstItem="jH0-0s-OW4" firstAttribute="leading" secondItem="Hv6-dk-HBu" secondAttribute="leading" id="RgQ-LI-cov"/>
                             <constraint firstItem="jH0-0s-OW4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="TBc-uB-sP9"/>
                             <constraint firstItem="Hv6-dk-HBu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tti-dS-rkz"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yQr-GL-Nry" secondAttribute="bottom" constant="97" id="eCT-YF-v52"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aAt-8V-daa" secondAttribute="trailing" id="cM5-Z1-z7U"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yQr-GL-Nry" secondAttribute="bottom" constant="141" id="eCT-YF-v52"/>
                             <constraint firstItem="jH0-0s-OW4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gYW-W6-osg"/>
                             <constraint firstItem="Hv6-dk-HBu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hsI-ZO-J2e"/>
                             <constraint firstItem="yQr-GL-Nry" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j50-P4-9o9"/>
                             <constraint firstItem="jH0-0s-OW4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qjB-RE-I1g"/>
                             <constraint firstItem="Hv6-dk-HBu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="174" id="zQX-ha-oq6"/>
+                            <constraint firstItem="aAt-8V-daa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zoy-P3-Cq3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -259,6 +270,8 @@
                                 <exclude reference="5wA-iW-oRy"/>
                                 <exclude reference="Cck-nL-Nw2"/>
                                 <exclude reference="hsI-ZO-J2e"/>
+                                <exclude reference="H4l-zD-keU"/>
+                                <exclude reference="zoy-P3-Cq3"/>
                             </mask>
                         </variation>
                     </view>

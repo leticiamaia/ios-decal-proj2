@@ -26,9 +26,8 @@ class GameViewController: UIViewController {
     }
     
     func initGame() {
-        //let hangmanPhrases = HangmanPhrases()
-        //let phrase = hangmanPhrases.getRandomPhrase()
-        let phrase = "VEEEEEERY LOOOOOONG PHRAAAAAAAAAAAAASE"
+        let hangmanPhrases = HangmanPhrases()
+        let phrase = hangmanPhrases.getRandomPhrase()
         self.gamePhrase = phrase
         self.failedGuesses = 0
         self.guessedLetters.removeAll()
@@ -56,6 +55,10 @@ class GameViewController: UIViewController {
                 changeHangmanImage()
             }
         }
+    }
+    
+    @IBAction func resetGame(sender: UIButton) {
+        showEndGameAlert("quit")
     }
     
     func checkGameWinCondition() {
